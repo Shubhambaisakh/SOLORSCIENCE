@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Solar Science is India's premium Solar EPC and Solar Insurance solutions provider. We install premium solar systems and safeguard your investment with end-to-end insurance.">
+  <title>Solar Science | Premium Solar EPC & Insurance Solutions</title>
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Inline SVG Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F5A623'%3E%3Ccircle cx='12' cy='12' r='5'/%3E%3Cpath d='M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42' stroke='%23F5A623' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- Premium preloader screen -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-content">
+      <svg class="preloader-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="5" fill="none" stroke="#F5A623" stroke-width="2"/>
+        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="#F5A623" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div class="preloader-bar">
+        <div class="preloader-progress"></div>
+      </div>
+      <span class="preloader-text">Solar Science</span>
+    </div>
+  </div>
+
+  <!-- Custom Cursor Elements (Awwwards design signature) -->
+  <div class="custom-cursor" id="custom-cursor"></div>
+  <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+
+  <!-- ==========================================================================
+       1. NAVBAR
+       ========================================================================== -->
+  <header class="navbar" id="navbar">
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+    <div class="container">
+      <a href="#" class="logo" aria-label="Solar Science Home">
+        <svg class="logo-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="5" />
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>Solar Science</span>
+      </a>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#why-us" class="nav-link">Why Us</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#insurance" class="nav-link">Insurance</a></li>
+          <li><a href="#process" class="nav-link">Process</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+          <li><a href="#contact" class="btn btn-primary btn-nav">Get Free Consultation</a></li>
+        </ul>
+      </nav>
+      
+      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       2. HERO SECTION - COMPLETELY REDESIGNED
+       ========================================================================== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-gradient"></div>
+    <div class="hero-particles"></div>
+    
+    <div class="container">
+      <div class="hero-content reveal">
+        <div class="hero-badge">
+          <span class="badge-icon">⚡</span>
+          <span>India's #1 Solar Solution</span>
+        </div>
+        <h1 class="hero-title-new">
+          Transform Sunlight Into
+          <span class="gradient-text">Sustainable Savings</span>
+        </h1>
+        <p class="hero-subtitle">Premium solar installations that pay for themselves. Join 1000+ satisfied customers who've reduced their electricity bills by up to 90%.</p>
+        
+        <div class="hero-stats-inline">
+          <div class="stat-inline">
+            <div class="stat-number-hero">50+</div>
+            <div class="stat-label-hero">MW Installed</div>
+          </div>
+          <div class="stat-inline">
+            <div class="stat-number-hero">500+</div>
+            <div class="stat-label-hero">Projects</div>
+          </div>
+          <div class="stat-inline">
+            <div class="stat-number-hero">1000+</div>
+            <div class="stat-label-hero">Happy Clients</div>
+          </div>
+          <div class="stat-inline">
+            <div class="stat-number-hero">25+</div>
+            <div class="stat-label-hero">Years Warranty</div>
+          </div>
+        </div>
+        
+        <div class="hero-ctas-new">
+          <a href="#contact" class="btn btn-hero-primary">
+            <span>Get Free Consultation</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+          <a href="#why-us" class="btn btn-hero-secondary">
+            <i data-lucide="play-circle"></i>
+            <span>Watch How It Works</span>
+          </a>
+        </div>
+        
+        <div class="hero-trust-new">
+          <div class="trust-item-new">
+            <i data-lucide="shield-check"></i>
+            <span>100% Insurance Protected</span>
+          </div>
+          <div class="trust-item-new">
+            <i data-lucide="award"></i>
+            <span>Tier-1 Components</span>
+          </div>
+          <div class="trust-item-new">
+            <i data-lucide="clock"></i>
+            <span>Quick 30-Day Installation</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hero-visual reveal reveal-delay-2">
+        <div class="glow-backdrop"></div>
+        <div class="panel-container">
+          <div class="svg-panel-wrapper">
+            <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <!-- Clipping path for solar panel cells boundary -->
+                <clipPath id="panelClip">
+                  <rect x="50" y="50" width="400" height="400" rx="16" />
+                </clipPath>
+                
+                <!-- Solar panel cell grid shimmer gradient -->
+                <linearGradient id="shimmerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#EAB308" stop-opacity="0" />
+                  <stop offset="40%" stop-color="#EAB308" stop-opacity="0" />
+                  <stop offset="50%" stop-color="#EAB308" stop-opacity="0.35" />
+                  <stop offset="52%" stop-color="#ffffff" stop-opacity="0.7" />
+                  <stop offset="54%" stop-color="#EAB308" stop-opacity="0.35" />
+                  <stop offset="60%" stop-color="#EAB308" stop-opacity="0" />
+                  <stop offset="100%" stop-color="#EAB308" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+              
+              <!-- Outer Frame Shadow/Base -->
+              <rect x="44" y="44" width="412" height="412" rx="20" fill="#07132B" />
+              
+              <!-- Outer Metal Frame -->
+              <rect class="panel-frame" x="48" y="48" width="404" height="404" rx="18" fill="#0F2C59" />
+              
+              <!-- Solar Cells Grid -->
+              <g clip-path="url(#panelClip)">
+                <!-- Row 1 -->
+                <rect class="panel-cell" x="60" y="60" width="85" height="85" rx="6" />
+                <rect class="panel-cell" x="155" y="60" width="85" height="85" rx="6" />
+                <rect class="panel-cell" x="250" y="60" width="85" height="85" rx="6" />
+                <rect class="panel-cell" x="345" y="60" width="85" height="85" rx="6" />
+                
+                <!-- Row 2 -->
+                <rect class="panel-cell" x="60" y="155" width="85" height="85" rx="6" />
+                <rect class="panel-cell" x="155" y="155" width="85" height="85" rx="6" />
+                <rect class="panel-cell" x="250" y="155" width="85" height="85" rx="6" />
+                <rect class="panel-cell" x="345" y="155" width="85" height="85" rx="6" />
+                
+                <!-- Row 3 -->
+                <rect class="panel-cell" x="60" y="250" width="85" height="85" rx="6" />
+                <rect class="panel-cell" x="155" y="250" width="85" height="85" rx="6" />
+                <rect class="panel-cell" x="250" y="250" width="85" height="85" rx="6" />
+                <rect class="panel-cell" x="345" y="250" width="85" height="85" rx="6" />
+                
+                <!-- Row 4 -->
+                <rect class="panel-cell" x="60" y="345" width="85" height="85" rx="6" />
+                <rect class="panel-cell" x="155" y="345" width="85" height="85" rx="6" />
+                <rect class="panel-cell" x="250" y="345" width="85" height="85" rx="6" />
+                <rect class="panel-cell" x="345" y="345" width="85" height="85" rx="6" />
+                
+                <!-- Silver grid lines -->
+                <line class="panel-grid-lines" x1="150" y1="50" x2="150" y2="450" />
+                <line class="panel-grid-lines" x1="245" y1="50" x2="245" y2="450" />
+                <line class="panel-grid-lines" x1="340" y1="50" x2="340" y2="450" />
+                <line class="panel-grid-lines" x1="50" y1="150" x2="450" y2="150" />
+                <line class="panel-grid-lines" x1="50" y1="245" x2="450" y2="245" />
+                <line class="panel-grid-lines" x1="50" y1="340" x2="450" y2="340" />
+                
+                <!-- Shimmer Line overlay moving across coordinates -->
+                <rect class="shimmer-line" x="-100" y="-100" width="700" height="700" fill="url(#shimmerGrad)" pointer-events="none" />
+              </g>
+              
+              <!-- Subtle technical highlights/reflections overlay -->
+              <circle cx="250" cy="250" r="120" fill="url(#glowGrad)" opacity="0.3" pointer-events="none"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       3. WHY CHOOSE SOLAR SCIENCE (Value Props)
+       ========================================================================== -->
+  <section class="section why-us" id="why-us">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-tag">Why Us</span>
+        <h2 class="section-title">Engineering Excellence Meets Investment Security</h2>
+        <p class="section-desc">We deliver premium solar solutions backed by top-tier engineering expertise and comprehensive insurance protection to secure your financial returns.</p>
+      </div>
+      
+      <div class="why-grid">
+        <div class="why-card reveal reveal-delay-1">
+          <div class="icon-wrapper">
+            <i data-lucide="award"></i>
+          </div>
+          <h3 class="why-card-title">Premium Quality Components</h3>
+          <p class="why-card-desc">We only source Tier-1 modules, state-of-the-art inverters, and premium structures to ensure 25+ years of robust plant generation.</p>
+        </div>
+        
+        <div class="why-card reveal reveal-delay-2">
+          <div class="icon-wrapper">
+            <i data-lucide="cpu"></i>
+          </div>
+          <h3 class="why-card-title">End-to-End EPC Solutions</h3>
+          <p class="why-card-desc">From feasibility design, government approvals, procurement, construction, to net-metering — we manage everything in-house.</p>
+        </div>
+        
+        <div class="why-card reveal reveal-delay-3">
+          <div class="icon-wrapper">
+            <i data-lucide="shield"></i>
+          </div>
+          <h3 class="why-card-title">Comprehensive Insurance Support</h3>
+          <p class="why-card-desc">We provide exclusive, direct assistance in securing comprehensive asset insurance, protecting your assets from day one.</p>
+        </div>
+        
+        <div class="why-card reveal reveal-delay-1">
+          <div class="icon-wrapper">
+            <i data-lucide="flame"></i>
+          </div>
+          <h3 class="why-card-title">Theft &amp; Disaster Coverage</h3>
+          <p class="why-card-desc">Safeguard your solar panels against fires, severe storms, lightning, unexpected theft, and malicious property damages.</p>
+        </div>
+        
+        <div class="why-card reveal reveal-delay-2">
+          <div class="icon-wrapper">
+            <i data-lucide="layout"></i>
+          </div>
+          <h3 class="why-card-title">Performance-Focused Design</h3>
+          <p class="why-card-desc">Advanced 3D shadow analysis and string optimization systems designed by experienced engineers for maximum power generation.</p>
+        </div>
+        
+        <div class="why-card reveal reveal-delay-3">
+          <div class="icon-wrapper">
+            <i data-lucide="wrench"></i>
+          </div>
+          <h3 class="why-card-title">Dedicated After-Sales Support</h3>
+          <p class="why-card-desc">Continuous plant health monitoring and fast, on-site maintenance services to prevent downtime and generation losses.</p>
+        </div>
+        
+        <div class="why-card reveal reveal-delay-1">
+          <div class="icon-wrapper">
+            <i data-lucide="calendar-check"></i>
+          </div>
+          <h3 class="why-card-title">On-Time Project Execution</h3>
+          <p class="why-card-desc">Strict adherence to project timelines and safety protocols, backed by penalty-bound delivery guarantees for zero business delays.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       3.5 SERVICES SECTION
+       ========================================================================== -->
+  <section class="section services" id="services" style="background-color: var(--color-steel-light);">
+    <div class="container">
+      <div class="reveal" style="text-align: center; margin-bottom: 60px;">
+        <span class="section-tag">Our Services</span>
+        <h2 class="section-title">End-to-End Solar EPC &amp; Protection Solutions</h2>
+        <p class="section-desc" style="margin: 0 auto 30px;">From commercial megaprojects to residential setups, we handle planning, permissions, installation, and long-term insurance.</p>
+      </div>
+
+      <div style="display: grid; grid-template-cols: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;">
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-img-placeholder">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100" height="100" fill="#0F2C59" rx="12"/>
+              <path d="M20 70 L40 50 L60 60 L80 35" stroke="#EAB308" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="80" cy="35" r="5" fill="#FFFFFF"/>
+              <line x1="20" y1="80" x2="80" y2="80" stroke="#5C6B82" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; color: var(--color-navy-deep);">Commercial &amp; Industrial Solar</h3>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 20px;">Turn your factory, warehouse, or business roof into a revenue-generating asset. We design and install high-generation solar plants that cut energy costs by up to 70%.</p>
+          <a href="#contact" class="service-link" style="color: var(--color-amber-gold); font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">Learn More <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i></a>
+        </div>
+
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-img-placeholder">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100" height="100" fill="#0F2C59" rx="12"/>
+              <path d="M50 20 L80 45 L80 80 L20 80 L20 45 Z" fill="#153568" stroke="#5C6B82" stroke-width="2"/>
+              <rect x="40" y="25" width="20" height="20" fill="#EAB308" transform="skewX(-15)"/>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; color: var(--color-navy-deep);">Residential Rooftop Solar</h3>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 20px;">Premium smart solar systems tailored for homes. Complete with aesthetic designs, net-metering setup, government subsidy assistance, and long-term protection guarantees.</p>
+          <a href="#contact" class="service-link" style="color: var(--color-amber-gold); font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">Learn More <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i></a>
+        </div>
+
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-img-placeholder">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100" height="100" fill="#0F2C59" rx="12"/>
+              <circle cx="50" cy="50" r="25" stroke="#5C6B82" stroke-width="2"/>
+              <path d="M50 35 L50 65 M35 50 L65 50" stroke="#EAB308" stroke-width="3"/>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; color: var(--color-navy-deep);">Solar Asset Insurance</h3>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 20px;">Our signature service: securing and facilitating end-to-end multi-peril insurance policies covering natural disasters, fire, machinery breakdown, and grid failures.</p>
+          <a href="#contact" class="service-link" style="color: var(--color-amber-gold); font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">Learn More <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i></a>
+        </div>
+
+        <div class="service-card reveal reveal-delay-4">
+          <div class="service-img-placeholder">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100" height="100" fill="#0F2C59" rx="12"/>
+              <circle cx="50" cy="55" r="20" stroke="#5C6B82" stroke-width="2"/>
+              <path d="M30 30 L50 45 L70 30" stroke="#EAB308" stroke-width="3"/>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; color: var(--color-navy-deep);">Operation &amp; Maintenance</h3>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 20px;">Protecting efficiency with professional cleaning, automated performance analytics, regular string testing, and immediate expert technician response.</p>
+          <a href="#contact" class="service-link" style="color: var(--color-amber-gold); font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">Learn More <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. SOLAR INSURANCE SECTION
+       ========================================================================== -->
+  <section class="section insurance bg-dark" id="insurance">
+    <div class="container">
+      <div class="insurance-grid">
+        <div class="insurance-col-left reveal">
+          <span class="section-tag">Solar Insurance</span>
+          <h2 class="section-title">Protect What You Build</h2>
+          <p class="section-desc">Solar plants are long-term capital investments exposed to weather hazards and physical damage. At Solar Science, we ensure that your asset remains secure, guaranteeing financial continuity in any eventuality.</p>
+          
+          <div class="insurance-list">
+            <div class="insurance-item">
+              <span class="insurance-check"><i data-lucide="check"></i></span>
+              <span class="insurance-item-text">Fire, Lightning &amp; Explosion Protection</span>
+            </div>
+            <div class="insurance-item">
+              <span class="insurance-check"><i data-lucide="check"></i></span>
+              <span class="insurance-item-text">Storm, Typhoon, Tempest &amp; Flood Cover</span>
+            </div>
+            <div class="insurance-item">
+              <span class="insurance-check"><i data-lucide="check"></i></span>
+              <span class="insurance-item-text">Burglary, Theft &amp; Riot Damages</span>
+            </div>
+            <div class="insurance-item">
+              <span class="insurance-check"><i data-lucide="check"></i></span>
+              <span class="insurance-item-text">Accidental Damages &amp; Impact Cover</span>
+            </div>
+            <div class="insurance-item">
+              <span class="insurance-check"><i data-lucide="check"></i></span>
+              <span class="insurance-item-text">Electrical &amp; Mechanical Breakdown Support</span>
+            </div>
+          </div>
+          
+          <div class="insurance-bottom-cta">
+            <a href="#contact" class="btn">Talk to Our Insurance Advisor <i data-lucide="arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="insurance-col-right reveal reveal-delay-2">
+          <div class="benefit-card">
+            <div class="benefit-icon"><i data-lucide="trending-up"></i></div>
+            <h3 class="benefit-title">Financial Security</h3>
+            <p class="benefit-desc">Keep your cash flows predictable even if your solar asset gets damaged. Insurance offsets repair costs entirely.</p>
+          </div>
+          
+          <div class="benefit-card">
+            <div class="benefit-icon"><i data-lucide="hourglass"></i></div>
+            <h3 class="benefit-title">Faster Claim Assistance</h3>
+            <p class="benefit-desc">Dedicated insurance support desk to assist you in filing claims, collecting proof, and getting fast disbursements.</p>
+          </div>
+          
+          <div class="benefit-card">
+            <div class="benefit-icon"><i data-lucide="thumbs-up"></i></div>
+            <h3 class="benefit-title">Reduced Business Risk</h3>
+            <p class="benefit-desc">Minimize business interruptions by ensuring that restoration and replacement happen with zero delay.</p>
+          </div>
+          
+          <div class="benefit-card">
+            <div class="benefit-icon"><i data-lucide="shield-alert"></i></div>
+            <h3 class="benefit-title">Asset Protection</h3>
+            <p class="benefit-desc">Protect your heavy capital equipment against manufacturing defects and extreme natural disasters.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. OUR PROCESS / PROMISE
+       ========================================================================== -->
+  <section class="section process" id="process">
+    <div class="container">
+      <div class="reveal" style="text-align: center; margin-bottom: 60px;">
+        <span class="section-tag">How We Work</span>
+        <h2 class="section-title">Seamless Execution, End-to-End</h2>
+        <p class="section-desc" style="margin: 0 auto 30px;">We follow a disciplined, four-stage process to deliver efficient engineering and robust security for your solar installation.</p>
+      </div>
+      
+      <div class="process-timeline">
+        <div class="process-line"></div>
+        
+        <div class="process-step reveal reveal-delay-1">
+          <div class="step-num">
+            01
+            <i data-lucide="drafting-compass"></i>
+          </div>
+          <h3 class="step-title">Design</h3>
+          <p class="step-desc">Optimized system configuration &amp; structural engineering for maximum generation.</p>
+        </div>
+        
+        <div class="process-step reveal reveal-delay-2">
+          <div class="step-num">
+            02
+            <i data-lucide="drill"></i>
+          </div>
+          <h3 class="step-title">Installation</h3>
+          <p class="step-desc">Professional deployment and commissioning executed by certified solar engineers.</p>
+        </div>
+        
+        <div class="process-step reveal reveal-delay-3">
+          <div class="step-num">
+            03
+            <i data-lucide="lock"></i>
+          </div>
+          <h3 class="step-title">Protection</h3>
+          <p class="step-desc">End-to-end solar asset insurance support setup to cover operational risks.</p>
+        </div>
+        
+        <div class="process-step reveal reveal-delay-4">
+          <div class="step-num">
+            04
+            <i data-lucide="activity"></i>
+          </div>
+          <h3 class="step-title">Service</h3>
+          <p class="step-desc">Dedicated operation, maintenance, and diagnostics through the project lifecycle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. HIGHLIGHT BANNER
+       ========================================================================== -->
+  <section class="banner" id="banner">
+    <div class="container">
+      <div class="banner-content reveal">
+        <h2 class="banner-title">Don't rely on just any installer.<br>Get the complete performance &amp; protection package.</h2>
+        <p class="banner-desc">Ensure complete peace of mind with Solar Science's Tier-1 EPC quality coupled with robust insurance coverage.</p>
+        
+        <div class="banner-features">
+          <div class="banner-feature">
+            <i data-lucide="check"></i>
+            <span>Premium Solar Solutions</span>
+          </div>
+          <div class="banner-feature">
+            <i data-lucide="check"></i>
+            <span>Fast Project Delivery</span>
+          </div>
+          <div class="banner-feature">
+            <i data-lucide="check"></i>
+            <span>Professional EPC Engineers</span>
+          </div>
+          <div class="banner-feature">
+            <i data-lucide="check"></i>
+            <span>Insurance Protection Support</span>
+          </div>
+          <div class="banner-feature">
+            <i data-lucide="check"></i>
+            <span>24/7 Diagnostics Desk</span>
+          </div>
+        </div>
+        
+        <a href="#contact" class="btn btn-primary">Start Your Solar Journey</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. STATISTICS SECTION
+       ========================================================================== -->
+  <section class="section stats" id="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-number" data-target="50">0</div>
+          <div class="stat-label">MW Installed</div>
+        </div>
+        
+        <div class="stat-card reveal reveal-delay-1">
+          <div class="stat-number" data-target="500">0</div>
+          <div class="stat-label">Projects Delivered</div>
+        </div>
+        
+        <div class="stat-card reveal reveal-delay-2">
+          <div class="stat-number" data-target="1000">0</div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+        
+        <div class="stat-card reveal reveal-delay-3">
+          <div class="stat-number" data-target="100">0</div>
+          <div class="stat-label">% Insurance Assistance</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7.5 FAQ SECTION
+       ========================================================================== -->
+  <section class="section faq" id="faq" style="background-color: var(--color-white);">
+    <div class="container" style="max-width: 800px;">
+      <div class="reveal" style="text-align: center; margin-bottom: 60px;">
+        <span class="section-tag">FAQ</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc" style="margin: 0 auto;">Everything you need to know about premium solar engineering, net-metering setup, and investment insurance protection.</p>
+      </div>
+
+      <div class="faq-accordion reveal">
+        <div class="faq-item">
+          <button class="faq-header" aria-expanded="false">
+            <span>Why does Solar Science offer solar plant insurance support?</span>
+            <i data-lucide="plus" class="faq-icon"></i>
+          </button>
+          <div class="faq-content">
+            <div class="faq-inner">
+              <p>Solar installations represent massive long-term capital investments designed to run for 25+ years. During this long lifespan, they are vulnerable to natural disasters (cyclones, earthquakes), fire, thefts, or equipment malfunctions. While most installers walk away after construction, we protect your financial return by bundling Tier-1 engineering with premium insurance coverage. If generation stops due to damage, you are fully covered.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header" aria-expanded="false">
+            <span>What specific risks does your solar insurance policy cover?</span>
+            <i data-lucide="plus" class="faq-icon"></i>
+          </button>
+          <div class="faq-content">
+            <div class="faq-inner">
+              <p>Our comprehensive solar insurance coverage protects your assets against fire, lightning, storms, tempest, floods, accidental breakdown, structural collapse, burglary, civil riots, and equipment damage. We also include options for loss of revenue coverage, compensating you for the electricity generation lost while the plant is undergoing repair.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header" aria-expanded="false">
+            <span>Do you handle net-metering approvals and government liaisoning?</span>
+            <i data-lucide="plus" class="faq-icon"></i>
+          </button>
+          <div class="faq-content">
+            <div class="faq-inner">
+              <p>Yes, absolutely. Our end-to-end EPC mandate covers site surveys, structural stability tests, grid capacity feasibility studies, state DISCOM approvals, net-metering installation, and final plant commissioning. Our in-house team handles all government liaisoning for you.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header" aria-expanded="false">
+            <span>What solar panel brands and inverters do you use?</span>
+            <i data-lucide="plus" class="faq-icon"></i>
+          </button>
+          <div class="faq-content">
+            <div class="faq-inner">
+              <p>We work exclusively with Tier-1 components. This includes modules from globally certified manufacturers like Waaree, Adani, Enphase, and Jinko, and top-tier inverters from brands like Sungrow, Growatt, and Solis. Every component comes with standard manufacturing warranties (25 years on panels, 5-10 years on inverters).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header" aria-expanded="false">
+            <span>How fast can I recover my solar investment (Payback Period)?</span>
+            <i data-lucide="plus" class="faq-icon"></i>
+          </button>
+          <div class="faq-content">
+            <div class="faq-inner">
+              <p>For industrial and commercial consumers, the average payback period in India ranges between 3 to 4 years. For residential systems, it is around 4 to 5 years. Given that a quality plant operates for over 25 years, you will enjoy free electricity and protected savings for 20+ years.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       8. CONTACT FORM / INTAKE SECTION (Bonus Premium Feature for high conversions)
+       ========================================================================== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="reveal text-center-header">
+        <span class="section-tag">Consultation</span>
+        <h2 class="section-title">Get a Free Solar Assessment &amp; Quote</h2>
+        <p class="section-desc mx-auto">Enter details about your rooftop or land size to receive a custom engineering plan and insurance proposal within 24 hours.</p>
+      </div>
+      
+      <div class="reveal reveal-delay-1 contact-card">
+        <form id="consultation-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="name">Full Name</label>
+              <input class="form-control" type="text" id="name" required placeholder="John Doe">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone Number</label>
+              <input class="form-control" type="tel" id="phone" required placeholder="+91 98765 43210">
+            </div>
+          </div>
+          
+          <div class="form-group form-margin-bottom">
+            <label class="form-label" for="email">Email Address</label>
+            <input class="form-control" type="email" id="email" required placeholder="john@example.com">
+          </div>
+          
+          <div class="form-row split-row">
+            <div class="form-group">
+              <label class="form-label" for="location">Project City / State</label>
+              <input class="form-control" type="text" id="location" required placeholder="Mumbai, Maharashtra">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="customer-type">Property Type</label>
+              <select class="form-control select-control" id="customer-type" required>
+                <option value="commercial">Commercial / Factory</option>
+                <option value="residential">Residential Home</option>
+                <option value="institutional">Institutional</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group form-margin-large">
+            <label class="form-label" for="message">Project Details / Remarks (Optional)</label>
+            <textarea class="form-control textarea-control" id="message" rows="4" placeholder="Mention your approximate monthly electricity bill or solar capacity required..."></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-submit">Submit Consultation Request</button>
+        </form>
+
+        <!-- Form Success State Overlay -->
+        <div class="form-success-overlay" id="form-success-overlay">
+          <div class="success-icon-wrap">
+            <svg class="success-icon-check" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M22 4L12 14.01l-3-3" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="success-title">Assessment Request Received</h3>
+          <p class="success-message">Thank you for contacting Solar Science. Our engineering and insurance advisory team has received your property details. We will prepare your custom analysis and proposal and connect with you within 24 hours.</p>
+          <button class="btn btn-primary btn-reset-form" id="btn-reset-form">Submit Another Request</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       9. FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo-area">
+          <a href="#" class="logo" style="color: var(--color-white);">
+            <svg class="logo-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="5" />
+              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Solar Science</span>
+          </a>
+          <p class="footer-tagline">"Sirf Solar Installation Nahi, Aapke Investment Ki Protection Bhi." Leading the transition to clean energy with performance guarantees and absolute asset security.</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#why-us" class="footer-link">Why Choose Us</a></li>
+            <li><a href="#services" class="footer-link">Our Services</a></li>
+            <li><a href="#insurance" class="footer-link">Solar Insurance</a></li>
+            <li><a href="#process" class="footer-link">Our Process</a></li>
+            <li><a href="#faq" class="footer-link">FAQ Accordion</a></li>
+            <li><a href="#contact" class="footer-link">Get Consultation</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Contact Us</h4>
+          <div class="footer-contact-info">
+            <div class="contact-item">
+              <i data-lucide="map-pin"></i>
+              <div class="contact-text">
+                <strong>Solar Science India Ltd.</strong>
+                <p>9th Floor, Tech Boulevard, Sector 62,<br>Noida, Uttar Pradesh - 201301</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i data-lucide="phone"></i>
+              <div class="contact-text">
+                <a href="tel:+9118001021234">1800-102-1234 (Toll-Free)</a>
+                <a href="tel:+919876543210">+91 98765 43210</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i data-lucide="mail"></i>
+              <div class="contact-text">
+                <a href="mailto:info@solarscience.in">info@solarscience.in</a>
+                <a href="mailto:support@solarscience.in">support@solarscience.in</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Solar Science Private Limited. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Custom JS Script -->
+  <script src="script.js"></script>
+</body>
+</html>
