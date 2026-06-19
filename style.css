@@ -1222,7 +1222,7 @@ img, svg {
 }
 
 /* ==========================================================================
-   7. WHY CHOOSE SOLAR SCIENCE - MODERN PASTEL DESIGN WITH ANIMATED NUMBERS
+   7. WHY CHOOSE SOLAR SCIENCE - CLEAN & SMOOTH DESIGN
    ========================================================================== */
 .why-us {
   background: linear-gradient(135deg, #FFF5F7 0%, #FFF8E7 50%, #F0F9FF 100%);
@@ -1230,7 +1230,7 @@ img, svg {
   overflow: hidden;
 }
 
-/* Animated background particles/lights */
+/* Simple static background - NO ANIMATION */
 .why-us::before {
   content: '';
   position: absolute;
@@ -1239,117 +1239,19 @@ img, svg {
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(circle at 20% 30%, rgba(255, 182, 193, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(173, 216, 230, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 40% 70%, rgba(255, 240, 245, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 90% 60%, rgba(255, 218, 185, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 60% 90%, rgba(221, 160, 221, 0.3) 0%, transparent 50%);
-  background-size: 300% 300%;
-  animation: particles-float 15s ease-in-out infinite;
+    radial-gradient(circle at 20% 30%, rgba(255, 182, 193, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(173, 216, 230, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 90% 60%, rgba(255, 218, 185, 0.15) 0%, transparent 50%);
   z-index: 1;
-}
-
-@keyframes particles-float {
-  0%, 100% { 
-    background-position: 0% 0%, 100% 0%, 50% 100%, 100% 50%, 0% 100%;
-    opacity: 0.6;
-  }
-  50% { 
-    background-position: 100% 100%, 0% 100%, 100% 0%, 0% 50%, 100% 0%;
-    opacity: 1;
-  }
-}
-
-/* Large shadow/light numbers in background */
-.why-us::after {
-  content: '50+ 500+ 1000+ 25+ 90%';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  font-size: 12rem;
-  font-weight: 900;
-  font-family: var(--font-display);
-  color: transparent;
-  line-height: 1.2;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 60px;
-  z-index: 1;
-  opacity: 1;
-  text-shadow: 
-    0 0 80px rgba(255, 182, 193, 0.15),
-    0 0 120px rgba(173, 216, 230, 0.12),
-    0 0 160px rgba(152, 251, 152, 0.1);
-  -webkit-text-stroke: 1px rgba(255, 182, 193, 0.08);
-  animation: numbers-glow 8s ease-in-out infinite;
   pointer-events: none;
-  word-spacing: 100px;
-  letter-spacing: 20px;
 }
 
-@keyframes numbers-glow {
-  0%, 100% { 
-    opacity: 0.3;
-    text-shadow: 
-      0 0 80px rgba(255, 182, 193, 0.15),
-      0 0 120px rgba(173, 216, 230, 0.12),
-      0 0 160px rgba(152, 251, 152, 0.1);
-  }
-  50% { 
-    opacity: 0.5;
-    text-shadow: 
-      0 0 100px rgba(255, 182, 193, 0.2),
-      0 0 140px rgba(173, 216, 230, 0.18),
-      0 0 180px rgba(152, 251, 152, 0.15);
-  }
+/* Remove large background numbers - PERFORMANCE KILLER */
+.why-us::after {
+  display: none;
 }
 
-/* Additional floating light spots */
-.why-us .container::before {
-  content: '';
-  position: absolute;
-  top: 15%;
-  left: 15%;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, rgba(255, 182, 193, 0.3) 0%, transparent 70%);
-  border-radius: 50%;
-  animation: float-light-1 6s ease-in-out infinite;
-  z-index: 1;
-  filter: blur(40px);
-  will-change: transform;
-}
-
-.why-us .container::after {
-  content: '';
-  position: absolute;
-  bottom: 15%;
-  right: 20%;
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle, rgba(173, 216, 230, 0.3) 0%, transparent 70%);
-  border-radius: 50%;
-  animation: float-light-2 8s ease-in-out infinite;
-  z-index: 1;
-  filter: blur(50px);
-  will-change: transform;
-}
-
-@keyframes float-light-1 {
-  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
-  50% { transform: translate(40px, -40px) scale(1.3); opacity: 0.7; }
-}
-
-@keyframes float-light-2 {
-  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
-  50% { transform: translate(-50px, 50px) scale(1.4); opacity: 0.7; }
-}
+/* Removed floating light spots for performance */
 
 .why-us .container {
   position: relative;
@@ -1460,60 +1362,25 @@ img, svg {
   text-shadow: 2px 2px 12px rgba(230, 200, 80, 0.6);
 }
 
-/* Glowing effect on hover - Using pseudo element different from number */
+/* Glowing effect on hover - SIMPLIFIED */
 .why-card .hover-glow {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  pointer-events: none;
+  display: none;
 }
 
 .why-card::after {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: 24px;
-  padding: 2px;
-  background: linear-gradient(135deg, 
-    rgba(255, 182, 193, 0.6),
-    rgba(173, 216, 230, 0.6),
-    rgba(152, 251, 152, 0.6),
-    rgba(255, 218, 185, 0.6)
-  );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  display: none;
 }
 
 .why-card:hover {
-  transform: translateY(-12px) scale(1.02);
+  transform: translateY(-8px);
   box-shadow: 
-    0 20px 60px rgba(31, 38, 135, 0.15),
-    0 0 0 1px rgba(255, 255, 255, 1) inset,
-    0 0 40px rgba(255, 182, 193, 0.3);
+    0 15px 40px rgba(31, 38, 135, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 1) inset;
+  transition: all 0.3s ease;
 }
 
 .why-card:hover::before {
   opacity: 0.3;
-  transform: scale(1.05);
-}
-
-.why-card:hover::after {
-  opacity: 1;
-  animation: rotating-border 3s linear infinite;
-}
-
-@keyframes rotating-border {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 /* Icon wrapper with pastel colors - Updated for SVG */
@@ -1572,8 +1439,8 @@ img, svg {
 }
 
 .why-card:hover .icon-wrapper {
-  transform: rotate(360deg) scale(1.15);
-  box-shadow: 0 12px 30px rgba(255, 182, 193, 0.6);
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 
 .why-card:hover .icon-wrapper svg {
