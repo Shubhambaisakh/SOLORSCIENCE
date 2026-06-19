@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Test</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 50px;
+      background: linear-gradient(135deg, #0a1628 0%, #0f2c59 100%);
+      font-family: 'Arial', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .btn-hero-primary {
+      background: #FF6B35;
+      color: #FFFFFF;
+      padding: 18px 36px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.6s ease;
+      border: 3px solid #FF6B35;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 0 20px rgba(255, 107, 53, 0.4), 0 4px 15px rgba(255, 107, 53, 0.3);
+    }
+
+    .btn-hero-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%);
+      z-index: -1;
+      transition: left 0.6s ease;
+    }
+
+    .btn-hero-primary::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
+      opacity: 0;
+      z-index: 10;
+    }
+
+    .btn-hero-primary:hover {
+      transform: translateY(-5px);
+      border-color: #3B82F6;
+      box-shadow: 
+        0 0 40px rgba(59, 130, 246, 0.8),
+        0 0 80px rgba(59, 130, 246, 0.6),
+        0 10px 30px rgba(30, 64, 175, 0.5);
+      animation: pulse-glow 1.5s ease-in-out infinite;
+    }
+
+    .btn-hero-primary:hover::before {
+      left: 0;
+    }
+
+    .btn-hero-primary:hover::after {
+      width: 300px;
+      height: 300px;
+      opacity: 0.2;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% {
+        box-shadow: 
+          0 0 40px rgba(59, 130, 246, 0.8),
+          0 0 80px rgba(59, 130, 246, 0.6),
+          0 10px 30px rgba(30, 64, 175, 0.5);
+      }
+      50% {
+        box-shadow: 
+          0 0 60px rgba(59, 130, 246, 1),
+          0 0 120px rgba(59, 130, 246, 0.8),
+          0 15px 40px rgba(30, 64, 175, 0.7);
+      }
+    }
+
+    .btn-hero-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: #FFFFFF;
+      padding: 18px 36px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.6s ease;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2), 0 4px 15px rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-hero-secondary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #10B981 0%, #14F195 100%);
+      z-index: -1;
+      transition: left 0.6s ease;
+    }
+
+    .btn-hero-secondary::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
+      opacity: 0;
+      z-index: 10;
+    }
+
+    .btn-hero-secondary:hover {
+      transform: translateY(-5px);
+      border-color: #14F195;
+      box-shadow: 
+        0 0 40px rgba(16, 185, 129, 0.9),
+        0 0 80px rgba(20, 241, 149, 0.7),
+        0 10px 30px rgba(16, 185, 129, 0.5);
+      animation: pulse-glow-green 1.5s ease-in-out infinite;
+    }
+
+    .btn-hero-secondary:hover::before {
+      left: 0;
+    }
+
+    .btn-hero-secondary:hover::after {
+      width: 300px;
+      height: 300px;
+      opacity: 0.2;
+    }
+
+    @keyframes pulse-glow-green {
+      0%, 100% {
+        box-shadow: 
+          0 0 40px rgba(16, 185, 129, 0.9),
+          0 0 80px rgba(20, 241, 149, 0.7),
+          0 10px 30px rgba(16, 185, 129, 0.5);
+      }
+      50% {
+        box-shadow: 
+          0 0 60px rgba(16, 185, 129, 1),
+          0 0 120px rgba(20, 241, 149, 0.9),
+          0 15px 40px rgba(16, 185, 129, 0.7);
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#" class="btn-hero-primary">
+    <span>Get Free Consultation</span>
+    <span>→</span>
+  </a>
+  
+  <a href="#" class="btn-hero-secondary">
+    <span>▶</span>
+    <span>Learn More</span>
+  </a>
+</body>
+</html>

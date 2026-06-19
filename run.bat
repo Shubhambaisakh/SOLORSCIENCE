@@ -1,0 +1,3 @@
+@echo off
+echo Opening Solar Science Website...
+start "" "index.html"

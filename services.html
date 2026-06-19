@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Comprehensive solar EPC services - Commercial, Residential, and Industrial solar solutions.">
+  <title>Services | Solar Science</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F5A623'%3E%3Ccircle cx='12' cy='12' r='5'/%3E%3Cpath d='M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42' stroke='%23F5A623' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.36/dist/lenis.min.js"></script>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-content">
+      <svg class="preloader-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="5" fill="none" stroke="#F5A623" stroke-width="2"/>
+        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="#F5A623" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div class="preloader-bar">
+        <div class="preloader-progress"></div>
+      </div>
+      <span class="preloader-text">Solar Science</span>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="custom-cursor"></div>
+  <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="scroll-progress" id="scroll-progress"></div>
+    <div class="container">
+      <a href="index.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="5" />
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>Solar Science</span>
+      </a>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="contact.html" class="btn btn-primary btn-nav">Get Quote</a></li>
+        </ul>
+      </nav>
+      
+      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <div class="page-header-content reveal">
+        <span class="section-tag">Our Services</span>
+        <h1 class="page-title">Complete Solar Solutions</h1>
+        <p class="page-subtitle">From planning to installation to maintenance - we handle everything for your solar journey.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="section">
+    <div class="container">
+      <div class="services-detailed-grid">
+        
+        <!-- Service 1 -->
+        <div class="service-detailed-card reveal">
+          <div class="service-detailed-icon">
+            <i data-lucide="building-2"></i>
+          </div>
+          <h2 class="service-detailed-title">Commercial & Industrial Solar</h2>
+          <p class="service-detailed-desc">Turn your factory, warehouse, or business roof into a revenue-generating asset. We design and install high-generation solar plants that cut energy costs by up to 70%.</p>
+          <ul class="service-detailed-features">
+            <li><i data-lucide="check"></i> Rooftop & Ground-Mounted Systems</li>
+            <li><i data-lucide="check"></i> Up to 70% Cost Reduction</li>
+            <li><i data-lucide="check"></i> Net-Metering Setup</li>
+            <li><i data-lucide="check"></i> Tax Benefits & Depreciation</li>
+            <li><i data-lucide="check"></i> DISCOM Approvals Handled</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Request Quote</a>
+        </div>
+        
+        <!-- Service 2 -->
+        <div class="service-detailed-card reveal reveal-delay-1">
+          <div class="service-detailed-icon">
+            <i data-lucide="home"></i>
+          </div>
+          <h2 class="service-detailed-title">Residential Rooftop Solar</h2>
+          <p class="service-detailed-desc">Premium smart solar systems tailored for homes. Complete with aesthetic designs, net-metering setup, government subsidy assistance, and long-term protection guarantees.</p>
+          <ul class="service-detailed-features">
+            <li><i data-lucide="check"></i> Customized Home Solutions</li>
+            <li><i data-lucide="check"></i> Government Subsidy Support</li>
+            <li><i data-lucide="check"></i> Zero Electricity Bills</li>
+            <li><i data-lucide="check"></i> Battery Backup Options</li>
+            <li><i data-lucide="check"></i> 25-Year Warranty</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Request Quote</a>
+        </div>
+        
+        <!-- Service 3 -->
+        <div class="service-detailed-card reveal reveal-delay-2">
+          <div class="service-detailed-icon">
+            <i data-lucide="shield"></i>
+          </div>
+          <h2 class="service-detailed-title">Solar Asset Insurance</h2>
+          <p class="service-detailed-desc">Our signature service: securing and facilitating end-to-end multi-peril insurance policies covering natural disasters, fire, machinery breakdown, and grid failures.</p>
+          <ul class="service-detailed-features">
+            <li><i data-lucide="check"></i> Fire & Lightning Coverage</li>
+            <li><i data-lucide="check"></i> Storm & Flood Protection</li>
+            <li><i data-lucide="check"></i> Theft & Vandalism Coverage</li>
+            <li><i data-lucide="check"></i> Equipment Breakdown Insurance</li>
+            <li><i data-lucide="check"></i> Fast Claim Assistance</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Request Quote</a>
+        </div>
+        
+        <!-- Service 4 -->
+        <div class="service-detailed-card reveal reveal-delay-3">
+          <div class="service-detailed-icon">
+            <i data-lucide="wrench"></i>
+          </div>
+          <h2 class="service-detailed-title">Operation & Maintenance</h2>
+          <p class="service-detailed-desc">Protecting efficiency with professional cleaning, automated performance analytics, regular string testing, and immediate expert technician response.</p>
+          <ul class="service-detailed-features">
+            <li><i data-lucide="check"></i> Regular Panel Cleaning</li>
+            <li><i data-lucide="check"></i> Performance Monitoring</li>
+            <li><i data-lucide="check"></i> Preventive Maintenance</li>
+            <li><i data-lucide="check"></i> Emergency Repair Service</li>
+            <li><i data-lucide="check"></i> Annual Health Checkups</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Request Quote</a>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS SECTION -->
+  <section class="section" style="background-color: var(--color-steel-light);">
+    <div class="container">
+      <div class="reveal text-center">
+        <span class="section-tag">How We Work</span>
+        <h2 class="section-title">Our Installation Process</h2>
+        <p class="section-desc mx-auto">A streamlined, professional approach to your solar installation.</p>
+      </div>
+      
+      <div class="process-timeline">
+        <div class="process-line"></div>
+        
+        <div class="process-step reveal reveal-delay-1">
+          <div class="step-num">
+            01
+            <i data-lucide="clipboard-list"></i>
+          </div>
+          <h3 class="step-title">Site Survey</h3>
+          <p class="step-desc">Detailed assessment of your property and energy requirements.</p>
+        </div>
+        
+        <div class="process-step reveal reveal-delay-2">
+          <div class="step-num">
+            02
+            <i data-lucide="drafting-compass"></i>
+          </div>
+          <h3 class="step-title">System Design</h3>
+          <p class="step-desc">Custom engineered solution for maximum energy generation.</p>
+        </div>
+        
+        <div class="process-step reveal reveal-delay-3">
+          <div class="step-num">
+            03
+            <i data-lucide="drill"></i>
+          </div>
+          <h3 class="step-title">Installation</h3>
+          <p class="step-desc">Professional deployment by certified solar engineers.</p>
+        </div>
+        
+        <div class="process-step reveal reveal-delay-4">
+          <div class="step-num">
+            04
+            <i data-lucide="power"></i>
+          </div>
+          <h3 class="step-title">Activation</h3>
+          <p class="step-desc">Grid connection, net-metering setup, and system handover.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="banner">
+    <div class="container">
+      <div class="banner-content reveal">
+        <h2 class="banner-title">Ready to Go Solar?</h2>
+        <p class="banner-desc">Get a free consultation and customized quote for your property.</p>
+        <a href="contact.html" class="btn btn-primary">Get Free Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo-area">
+          <a href="index.html" class="logo" style="color: var(--color-white);">
+            <svg class="logo-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="5" />
+              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Solar Science</span>
+          </a>
+          <p class="footer-tagline">Leading the transition to clean energy with performance guarantees and absolute asset security.</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="services.html" class="footer-link">Services</a></li>
+            <li><a href="projects.html" class="footer-link">Projects</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Contact Us</h4>
+          <div class="footer-contact-info">
+            <div class="contact-item">
+              <i data-lucide="map-pin"></i>
+              <div class="contact-text">
+                <strong>Solar Science India Ltd.</strong>
+                <p>Sector 62, Noida, UP - 201301</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i data-lucide="phone"></i>
+              <div class="contact-text">
+                <a href="tel:+918001021234">1800-102-1234</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i data-lucide="mail"></i>
+              <div class="contact-text">
+                <a href="mailto:info@solarscience.in">info@solarscience.in</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Solar Science. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

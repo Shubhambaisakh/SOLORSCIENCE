@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore our portfolio of 500+ successful solar installations across India.">
+  <title>Projects | Solar Science</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F5A623'%3E%3Ccircle cx='12' cy='12' r='5'/%3E%3Cpath d='M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42' stroke='%23F5A623' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.36/dist/lenis.min.js"></script>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-content">
+      <svg class="preloader-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="5" fill="none" stroke="#F5A623" stroke-width="2"/>
+        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="#F5A623" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div class="preloader-bar">
+        <div class="preloader-progress"></div>
+      </div>
+      <span class="preloader-text">Solar Science</span>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="custom-cursor"></div>
+  <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="scroll-progress" id="scroll-progress"></div>
+    <div class="container">
+      <a href="index.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="5" />
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>Solar Science</span>
+      </a>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="projects.html" class="nav-link active">Projects</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="contact.html" class="btn btn-primary btn-nav">Get Quote</a></li>
+        </ul>
+      </nav>
+      
+      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <div class="page-header-content reveal">
+        <span class="section-tag">Our Portfolio</span>
+        <h1 class="page-title">Powering India, One Roof at a Time</h1>
+        <p class="page-subtitle">500+ successful installations across residential, commercial, and industrial sectors.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS GRID -->
+  <section class="section projects-section">
+    <div class="container">
+      <div class="projects-grid">
+        
+        <!-- Project 1 -->
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-image">
+            <div class="project-image-placeholder" style="background: linear-gradient(135deg, #0a1628 0%, #1a3a6b 100%);">
+              <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="300" fill="#0F2C59"/>
+                <rect x="50" y="100" width="300" height="150" rx="8" fill="#1a3a6b"/>
+                <g opacity="0.6">
+                  <rect x="70" y="120" width="60" height="50" rx="4" fill="#EAB308"/>
+                  <rect x="140" y="120" width="60" height="50" rx="4" fill="#EAB308"/>
+                  <rect x="210" y="120" width="60" height="50" rx="4" fill="#EAB308"/>
+                  <rect x="280" y="120" width="60" height="50" rx="4" fill="#EAB308"/>
+                  <rect x="70" y="180" width="60" height="50" rx="4" fill="#EAB308"/>
+                  <rect x="140" y="180" width="60" height="50" rx="4" fill="#EAB308"/>
+                  <rect x="210" y="180" width="60" height="50" rx="4" fill="#EAB308"/>
+                  <rect x="280" y="180" width="60" height="50" rx="4" fill="#EAB308"/>
+                </g>
+                <circle cx="200" cy="80" r="30" fill="#FBBF24" opacity="0.3"/>
+              </svg>
+            </div>
+            <div class="project-badge">Commercial</div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">500 kW Industrial Rooftop - Mumbai</h3>
+            <p class="project-desc">Complete EPC solution for a manufacturing facility reducing energy costs by 65% annually.</p>
+            <div class="project-stats">
+              <span><i data-lucide="zap"></i> 500 kW</span>
+              <span><i data-lucide="calendar"></i> 2024</span>
+              <span><i data-lucide="map-pin"></i> Mumbai, MH</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-image">
+            <div class="project-image-placeholder" style="background: linear-gradient(135deg, #1a3a6b 0%, #0a1628 100%);">
+              <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="300" fill="#0F2C59"/>
+                <path d="M200 80 L320 180 L320 240 L80 240 L80 180 Z" fill="#1a3a6b"/>
+                <rect x="140" y="100" width="120" height="60" rx="4" fill="#EAB308" opacity="0.7" transform="skewY(-10)"/>
+                <circle cx="200" cy="60" r="25" fill="#FBBF24" opacity="0.4"/>
+              </svg>
+            </div>
+            <div class="project-badge">Residential</div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">10 kW Residential Setup - Delhi NCR</h3>
+            <p class="project-desc">Premium home solar installation with net-metering and 25-year comprehensive warranty.</p>
+            <div class="project-stats">
+              <span><i data-lucide="zap"></i> 10 kW</span>
+              <span><i data-lucide="calendar"></i> 2024</span>
+              <span><i data-lucide="map-pin"></i> Delhi, DL</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project-card reveal reveal-delay-3">
+          <div class="project-image">
+            <div class="project-image-placeholder" style="background: linear-gradient(135deg, #0F2C59 0%, #1a3a6b 100%);">
+              <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="300" fill="#0F2C59"/>
+                <rect x="60" y="120" width="280" height="140" rx="12" fill="#1a3a6b"/>
+                <g opacity="0.7">
+                  <rect x="80" y="140" width="50" height="40" rx="3" fill="#EAB308"/>
+                  <rect x="140" y="140" width="50" height="40" rx="3" fill="#EAB308"/>
+                  <rect x="200" y="140" width="50" height="40" rx="3" fill="#EAB308"/>
+                  <rect x="260" y="140" width="50" height="40" rx="3" fill="#EAB308"/>
+                  <rect x="80" y="190" width="50" height="40" rx="3" fill="#EAB308"/>
+                  <rect x="140" y="190" width="50" height="40" rx="3" fill="#EAB308"/>
+                  <rect x="200" y="190" width="50" height="40" rx="3" fill="#EAB308"/>
+                  <rect x="260" y="190" width="50" height="40" rx="3" fill="#EAB308"/>
+                </g>
+                <circle cx="200" cy="90" r="20" fill="#FBBF24" opacity="0.3"/>
+              </svg>
+            </div>
+            <div class="project-badge">Industrial</div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">2 MW Ground-Mounted Plant - Rajasthan</h3>
+            <p class="project-desc">Large-scale solar farm with advanced monitoring and complete insurance coverage.</p>
+            <div class="project-stats">
+              <span><i data-lucide="zap"></i> 2 MW</span>
+              <span><i data-lucide="calendar"></i> 2023</span>
+              <span><i data-lucide="map-pin"></i> Jaipur, RJ</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 4 -->
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-image">
+            <div class="project-image-placeholder" style="background: linear-gradient(135deg, #1a3a6b 0%, #0F2C59 100%);">
+              <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="300" fill="#0F2C59"/>
+                <rect x="70" y="110" width="260" height="130" rx="10" fill="#1a3a6b"/>
+                <g opacity="0.6">
+                  <rect x="90" y="130" width="55" height="45" rx="4" fill="#EAB308"/>
+                  <rect x="155" y="130" width="55" height="45" rx="4" fill="#EAB308"/>
+                  <rect x="220" y="130" width="55" height="45" rx="4" fill="#EAB308"/>
+                  <rect x="90" y="185" width="55" height="45" rx="4" fill="#EAB308"/>
+                  <rect x="155" y="185" width="55" height="45" rx="4" fill="#EAB308"/>
+                  <rect x="220" y="185" width="55" height="45" rx="4" fill="#EAB308"/>
+                </g>
+                <circle cx="200" cy="75" r="28" fill="#FBBF24" opacity="0.35"/>
+              </svg>
+            </div>
+            <div class="project-badge">Commercial</div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">250 kW Shopping Mall - Bangalore</h3>
+            <p class="project-desc">Rooftop installation powering retail operations with significant cost savings.</p>
+            <div class="project-stats">
+              <span><i data-lucide="zap"></i> 250 kW</span>
+              <span><i data-lucide="calendar"></i> 2024</span>
+              <span><i data-lucide="map-pin"></i> Bangalore, KA</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 5 -->
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-image">
+            <div class="project-image-placeholder" style="background: linear-gradient(135deg, #0a1628 0%, #1a3a6b 100%);">
+              <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="300" fill="#0F2C59"/>
+                <path d="M200 90 L310 170 L310 230 L90 230 L90 170 Z" fill="#1a3a6b"/>
+                <rect x="150" y="110" width="100" height="50" rx="4" fill="#EAB308" opacity="0.7" transform="skewY(-8)"/>
+                <circle cx="200" cy="70" r="22" fill="#FBBF24" opacity="0.4"/>
+              </svg>
+            </div>
+            <div class="project-badge">Residential</div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">7 kW Villa Setup - Pune</h3>
+            <p class="project-desc">Elegant residential installation with smart monitoring and battery backup option.</p>
+            <div class="project-stats">
+              <span><i data-lucide="zap"></i> 7 kW</span>
+              <span><i data-lucide="calendar"></i> 2024</span>
+              <span><i data-lucide="map-pin"></i> Pune, MH</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 6 -->
+        <div class="project-card reveal reveal-delay-3">
+          <div class="project-image">
+            <div class="project-image-placeholder" style="background: linear-gradient(135deg, #1a3a6b 0%, #0a1628 100%);">
+              <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="300" fill="#0F2C59"/>
+                <rect x="50" y="105" width="300" height="145" rx="10" fill="#1a3a6b"/>
+                <g opacity="0.65">
+                  <rect x="70" y="125" width="60" height="50" rx="4" fill="#EAB308"/>
+                  <rect x="140" y="125" width="60" height="50" rx="4" fill="#EAB308"/>
+                  <rect x="210" y="125" width="60" height="50" rx="4" fill="#EAB308"/>
+                  <rect x="280" y="125" width="60" height="50" rx="4" fill="#EAB308"/>
+                  <rect x="70" y="185" width="60" height="50" rx="4" fill="#EAB308"/>
+                  <rect x="140" y="185" width="60" height="50" rx="4" fill="#EAB308"/>
+                  <rect x="210" y="185" width="60" height="50" rx="4" fill="#EAB308"/>
+                  <rect x="280" y="185" width="60" height="50" rx="4" fill="#EAB308"/>
+                </g>
+                <circle cx="200" cy="85" r="25" fill="#FBBF24" opacity="0.35"/>
+              </svg>
+            </div>
+            <div class="project-badge">Institutional</div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">1 MW University Campus - Hyderabad</h3>
+            <p class="project-desc">Educational institution achieving energy independence with our comprehensive solution.</p>
+            <div class="project-stats">
+              <span><i data-lucide="zap"></i> 1 MW</span>
+              <span><i data-lucide="calendar"></i> 2023</span>
+              <span><i data-lucide="map-pin"></i> Hyderabad, TS</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      <div class="projects-cta reveal">
+        <p class="projects-cta-text">Want to see your property featured here?</p>
+        <a href="contact.html" class="btn btn-primary">Start Your Solar Journey</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo-area">
+          <a href="index.html" class="logo" style="color: var(--color-white);">
+            <svg class="logo-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="5" />
+              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Solar Science</span>
+          </a>
+          <p class="footer-tagline">Leading the transition to clean energy with performance guarantees and absolute asset security.</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="services.html" class="footer-link">Services</a></li>
+            <li><a href="projects.html" class="footer-link">Projects</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Contact Us</h4>
+          <div class="footer-contact-info">
+            <div class="contact-item">
+              <i data-lucide="map-pin"></i>
+              <div class="contact-text">
+                <strong>Solar Science India Ltd.</strong>
+                <p>Sector 62, Noida, UP - 201301</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i data-lucide="phone"></i>
+              <div class="contact-text">
+                <a href="tel:+918001021234">1800-102-1234</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i data-lucide="mail"></i>
+              <div class="contact-text">
+                <a href="mailto:info@solarscience.in">info@solarscience.in</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Solar Science. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

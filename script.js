@@ -4,6 +4,56 @@ document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
   }
 
+  // Initialize Lenis Smooth Scroll (Awwwards-grade smooth scroll effect)
+  if (typeof Lenis !== 'undefined') {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
+      smoothWheel: true,
+      smoothTouch: false
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+    
+    // Bind all anchor links to scroll smoothly via Lenis
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          lenis.scrollTo(targetElement, {
+            offset: -80, // offset navbar height
+            duration: 1.2
+          });
+        }
+      });
+    });
+  }
+
+  /* ==========================================================================
+     0. LETTER POP ANIMATION FOR TITLE
+     ========================================================================== */
+  const letterAnimateElements = document.querySelectorAll('.letter-animate');
+  
+  letterAnimateElements.forEach(element => {
+    const text = element.textContent || '';
+    element.textContent = '';
+    
+    text.split('').forEach(char => {
+      const span = document.createElement('span');
+      span.className = char === ' ' ? 'letter space' : 'letter';
+      span.textContent = char === ' ' ? '\u00A0' : char;
+      element.appendChild(span);
+    });
+  });
+
   /* ==========================================================================
      1. MOBILE MENU TOGGLE
      ========================================================================== */
@@ -50,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.getElementById('navbar');
   
   const handleScrollNavbar = () => {
+    if (!navbar) return;
     if (window.scrollY > 40) {
       navbar.classList.add('scrolled');
     } else {
@@ -81,48 +132,105 @@ document.addEventListener('DOMContentLoaded', () => {
   revealElements.forEach(el => revealObserver.observe(el));
 
   /* ==========================================================================
-     4. INTERSECTION OBSERVER - STATS COUNT-UP
+     4. INTERSECTION OBSERVER - STATS COUNT-UP (Both Hero and About) - AUTO ANIMATE
      ========================================================================== */
-  const statNumbers = document.querySelectorAll('.stat-number');
+  const statNumbers = document.querySelectorAll('.stat-number, .stat-number-large, .stat-number-hero');
+  
+  console.log('Found stat elements:', statNumbers.length);
   
   const animateCount = (element) => {
-    const target = parseInt(element.getAttribute('data-target'), 10);
-    const duration = 1800; // 1.8 seconds duration
+    // Get target from data attribute or text content
+    let target;
+    let hasPlus = false;
+    let isPercentage = false;
+    
+    if (element.hasAttribute('data-target')) {
+      // If data-target exists, use it
+      target = parseInt(element.getAttribute('data-target'), 10);
+      // Check original content for + or %
+      const originalText = element.textContent || '';
+      hasPlus = originalText.includes('+');
+      isPercentage = originalText.includes('%');
+    } else {
+      // Extract from text content
+      const originalText = element.textContent || '';
+      hasPlus = originalText.includes('+');
+      isPercentage = originalText.includes('%');
+      target = parseInt(originalText.replace(/\D/g, ''), 10);
+      // Store for future reference
+      element.setAttribute('data-target', target);
+    }
+    
+    console.log('Animating element:', element, 'Target:', target, 'hasPlus:', hasPlus);
+    
+    if (isNaN(target)) {
+      console.warn('Invalid target for element:', element);
+      return;
+    }
+    
+    const duration = 1500; // 1.5 second animation - fast and smooth
     const startTime = performance.now();
-    const isPercentage = target === 100;
     
     const update = (now) => {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
       
-      // Easing function (easeOutQuad)
-      const easeProgress = progress * (2 - progress);
+      // Fast easing function (easeOutCubic for speed)
+      const easeProgress = 1 - Math.pow(1 - progress, 3);
       const currentValue = Math.floor(easeProgress * target);
       
-      element.textContent = currentValue + (isPercentage ? '%' : '+');
+      // Update text
+      if (hasPlus) {
+        element.textContent = currentValue + '+';
+      } else if (isPercentage) {
+        element.textContent = currentValue + '%';
+      } else {
+        element.textContent = currentValue;
+      }
       
+      // Add pulse effect during counting
       if (progress < 1) {
+        const scale = 1 + Math.sin(progress * Math.PI * 4) * 0.05;
+        element.style.transform = `scale(${scale})`;
+        element.style.transition = 'transform 0.1s ease';
         requestAnimationFrame(update);
       } else {
-        element.textContent = target + (isPercentage ? '%' : '+');
+        // Final value
+        if (hasPlus) {
+          element.textContent = target + '+';
+        } else if (isPercentage) {
+          element.textContent = target + '%';
+        } else {
+          element.textContent = target;
+        }
+        element.style.transform = 'scale(1)';
       }
     };
     
+    // Start from 0
+    element.textContent = '0' + (hasPlus ? '+' : isPercentage ? '%' : '');
     requestAnimationFrame(update);
   };
 
+  // Use lower threshold so animation triggers more reliably
   const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
+        console.log('Element entered viewport:', entry.target);
+        // Animate immediately
         animateCount(entry.target);
         statsObserver.unobserve(entry.target);
       }
     });
   }, {
-    threshold: 0.5
+    threshold: 0.1, // Trigger when just 10% visible
+    rootMargin: '0px 0px -50px 0px'
   });
 
-  statNumbers.forEach(num => statsObserver.observe(num));
+  statNumbers.forEach(num => {
+    console.log('Observing:', num);
+    statsObserver.observe(num);
+  });
 
   /* ==========================================================================
      5. DYNAMIC SCROLL ACTIVE NAV LINK HIGHLIGHT
@@ -139,12 +247,20 @@ document.addEventListener('DOMContentLoaded', () => {
       const sectionId = section.getAttribute('id');
 
       if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        mainNavLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${sectionId}`) {
-            link.classList.add('active');
-          }
-        });
+        let targetId = sectionId;
+        if (sectionId === 'why-us') targetId = 'about';
+        if (sectionId === 'process') targetId = 'services';
+
+        const hasMatchingLink = Array.from(mainNavLinks).some(link => link.getAttribute('href') === `#${targetId}`);
+        if (hasMatchingLink) {
+          mainNavLinks.forEach(link => {
+            if (link.getAttribute('href') === `#${targetId}`) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        }
       }
     });
   };
@@ -245,7 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     // Expand outer ring on interactive hovers
-    const hoverables = document.querySelectorAll('a, button, .why-card, .faq-header, .service-card, input, select, textarea');
+    const hoverables = document.querySelectorAll('a, button, .why-card, .faq-header, .service-card, .project-card, .pillar-card, input, select, textarea');
     
     hoverables.forEach(item => {
       item.addEventListener('mouseenter', () => {
