@@ -4,38 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
   }
 
-  // Initialize Lenis Smooth Scroll (Awwwards-grade smooth scroll effect)
-  if (typeof Lenis !== 'undefined') {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
-      smoothWheel: true,
-      smoothTouch: false
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-    
-    // Bind all anchor links to scroll smoothly via Lenis
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          e.preventDefault();
-          lenis.scrollTo(targetElement, {
-            offset: -80, // offset navbar height
-            duration: 1.2
-          });
-        }
-      });
-    });
-  }
+  // Native smooth-scrolling is enabled globally in style.css for 100% smooth, hardware-accelerated rendering.
 
   /* ==========================================================================
      0. LETTER POP ANIMATION FOR TITLE
@@ -108,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  window.addEventListener('scroll', handleScrollNavbar);
   handleScrollNavbar(); // Initial check on load
 
   /* ==========================================================================
@@ -232,41 +200,8 @@ document.addEventListener('DOMContentLoaded', () => {
     statsObserver.observe(num);
   });
 
-  /* ==========================================================================
-     5. DYNAMIC SCROLL ACTIVE NAV LINK HIGHLIGHT
-     ========================================================================== */
-  const sections = document.querySelectorAll('section[id]');
-  const mainNavLinks = document.querySelectorAll('.nav-menu .nav-link');
-
-  const highlightNav = () => {
-    const scrollPosition = window.scrollY + 120; // offset for nav header height
-
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute('id');
-
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        let targetId = sectionId;
-        if (sectionId === 'why-us') targetId = 'about';
-        if (sectionId === 'process') targetId = 'services';
-
-        const hasMatchingLink = Array.from(mainNavLinks).some(link => link.getAttribute('href') === `#${targetId}`);
-        if (hasMatchingLink) {
-          mainNavLinks.forEach(link => {
-            if (link.getAttribute('href') === `#${targetId}`) {
-              link.classList.add('active');
-            } else {
-              link.classList.remove('active');
-            }
-          });
-        }
-      }
-    });
-  };
-
-  window.addEventListener('scroll', highlightNav);
-  highlightNav(); // Initial check on load
+  // highlightNav removed to prevent severe scroll lag from layout-thrashing section query lookups.
+  // Active links are statically assigned per-page in their respective HTML markup.
 
   /* ==========================================================================
      6. FAQ ACCORDION INTERACTION
@@ -292,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ==========================================================================
-     7. SCROLL PROGRESS BAR
+     7. SCROLL PROGRESS BAR & THROTTLED SCROLL CONTROLLER
      ========================================================================== */
   const scrollProgress = document.getElementById('scroll-progress');
   
@@ -304,8 +239,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  window.addEventListener('scroll', updateScrollProgress);
   updateScrollProgress(); // Initial check
+
+  // Throttled Scroll Controller to prevent layout thrashing and scroll lag
+  let isScrollTicking = false;
+  const handleScrollEvent = () => {
+    if (!isScrollTicking) {
+      window.requestAnimationFrame(() => {
+        handleScrollNavbar();
+        updateScrollProgress();
+        isScrollTicking = false;
+      });
+      isScrollTicking = true;
+    }
+  };
+
+  window.addEventListener('scroll', handleScrollEvent, { passive: true });
 
   /* ==========================================================================
      8. AWWWARDS CUSTOM TRAILING CURSOR
@@ -319,15 +268,39 @@ document.addEventListener('DOMContentLoaded', () => {
     let cursorX = 0;
     let cursorY = 0;
     let hasMoved = false;
+    let isAnimating = false;
+    
+    // Smooth custom physics outer ring loop
+    const animateCursor = () => {
+      const ease = 0.16; // trailing delay ease
+      const dx = mouseX - cursorX;
+      const dy = mouseY - cursorY;
+      
+      cursorX += dx * ease;
+      cursorY += dy * ease;
+      
+      cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
+      cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+      
+      // Stop loop when cursor matches target position closely
+      if (Math.abs(dx) < 0.1 && Math.abs(dy) < 0.1) {
+        isAnimating = false;
+        cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+        cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+      } else {
+        requestAnimationFrame(animateCursor);
+      }
+    };
     
     // Track mouse movements
     document.addEventListener('mousemove', (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
       
-      // Small core dot follows mouse coordinates exactly
-      cursorDot.style.left = `${mouseX}px`;
-      cursorDot.style.top = `${mouseY}px`;
+      if (!isAnimating) {
+        isAnimating = true;
+        requestAnimationFrame(animateCursor);
+      }
       
       if (!hasMoved) {
         cursor.style.opacity = '1';
@@ -335,19 +308,6 @@ document.addEventListener('DOMContentLoaded', () => {
         hasMoved = true;
       }
     });
-    
-    // Smooth custom physics outer ring loop
-    const animateCursor = () => {
-      const ease = 0.16; // trailing delay ease
-      cursorX += (mouseX - cursorX) * ease;
-      cursorY += (mouseY - cursorY) * ease;
-      
-      cursor.style.left = `${cursorX}px`;
-      cursor.style.top = `${cursorY}px`;
-      
-      requestAnimationFrame(animateCursor);
-    };
-    requestAnimationFrame(animateCursor);
     
     // Hide when mouse departs document window
     document.addEventListener('mouseleave', () => {
@@ -385,6 +345,30 @@ document.addEventListener('DOMContentLoaded', () => {
         preloader.style.display = 'none';
       }, 800); // matches CSS transition time
     }, 1600); // matches CSS progress bar loader time
+  }
+
+  /* ==========================================================================
+     9.5 PAUSE OFFSCREEN ANIMATIONS GLOBAL SYSTEM (Performance Boost)
+     ========================================================================== */
+  const animatedContainers = document.querySelectorAll('section, .hero, .banner, .work-gallery, .why-us, footer');
+  
+  if (animatedContainers.length > 0) {
+    const animationObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('animations-paused');
+        } else {
+          entry.target.classList.add('animations-paused');
+        }
+      });
+    }, {
+      threshold: 0, // trigger as soon as it leaves
+      rootMargin: '150px 0px 150px 0px' // buffer so animations activate slightly before entry
+    });
+    
+    animatedContainers.forEach(container => {
+      animationObserver.observe(container);
+    });
   }
 
   /* ==========================================================================
