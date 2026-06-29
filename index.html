@@ -83,19 +83,23 @@
         
         <div class="hero-stats-inline">
           <div class="stat-inline">
-            <div class="stat-number-hero">50+</div>
-            <div class="stat-label-hero">MW Installed</div>
+            <div class="stat-number-hero" data-target="500">0<span class="stat-plus">+</span></div>
+            <div class="stat-label-hero">Consulted Clients</div>
+          </div>
+          <div class="stat-inline stat-highlight">
+            <div class="stat-badge-text">Procurement</div>
+            <div class="stat-label-hero">Specialist</div>
           </div>
           <div class="stat-inline">
-            <div class="stat-number-hero">500+</div>
-            <div class="stat-label-hero">Projects</div>
+            <div class="stat-number-hero" data-target="1000">0<span class="stat-plus">+</span></div>
+            <div class="stat-label-hero">Cases Handled</div>
           </div>
           <div class="stat-inline">
-            <div class="stat-number-hero">1000+</div>
-            <div class="stat-label-hero">Happy Clients</div>
+            <div class="stat-number-hero" data-target="39">0</div>
+            <div class="stat-label-hero">Cities We Serve</div>
           </div>
           <div class="stat-inline">
-            <div class="stat-number-hero">25+</div>
+            <div class="stat-number-hero" data-target="25">0<span class="stat-plus">+</span></div>
             <div class="stat-label-hero">Years Warranty</div>
           </div>
         </div>
@@ -190,6 +194,78 @@
           <div class="floating-stat stat-3">
             <div class="stat-icon">🌱</div>
             <div class="stat-value">CO₂ Saved</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLAR SAVINGS CALCULATOR SECTION -->
+  <section class="section calculator-section">
+    <div class="container">
+      <div class="calculator-wrapper reveal">
+        <div class="calculator-header">
+          <h2 class="calculator-title">Calculate Your <span class="gradient-text">Solar Savings</span></h2>
+          <p class="calculator-subtitle">Instant estimation for your property</p>
+        </div>
+        
+        <div class="calculator-content">
+          <!-- Customer Type Selection -->
+          <div class="calculator-group">
+            <label class="calculator-label">CUSTOMER TYPE</label>
+            <div class="type-buttons">
+              <button class="type-btn active" data-type="home">Home</button>
+              <button class="type-btn" data-type="commercial">Commercial</button>
+              <button class="type-btn" data-type="industry">Industry</button>
+            </div>
+          </div>
+          
+          <!-- Monthly Bill Input -->
+          <div class="calculator-group">
+            <label class="calculator-label">MONTHLY BILL (₹)</label>
+            <input type="number" id="monthlyBill" class="calculator-input" placeholder="5000" value="5000">
+          </div>
+          
+          <!-- Results Grid -->
+          <div class="calculator-results">
+            <div class="result-card">
+              <div class="result-icon">⚡</div>
+              <div class="result-label">SYSTEM SIZE</div>
+              <div class="result-value" id="systemSize">6 kW</div>
+            </div>
+            
+            <div class="result-card">
+              <div class="result-icon">💰</div>
+              <div class="result-label">ANNUAL SAVINGS</div>
+              <div class="result-value green" id="annualSavings">₹69.1k</div>
+            </div>
+            
+            <div class="result-card">
+              <div class="result-icon">🔋</div>
+              <div class="result-label">YEARLY GEN.</div>
+              <div class="result-value" id="yearlyGen">8640 units</div>
+            </div>
+            
+            <div class="result-card">
+              <div class="result-icon">📐</div>
+              <div class="result-label">ROOF NEEDED</div>
+              <div class="result-value" id="roofNeeded">480 sqft</div>
+            </div>
+          </div>
+          
+          <!-- Quote Section -->
+          <div class="calculator-quote">
+            <div class="quote-price">
+              <span class="quote-label">Effective Solar Cost</span>
+              <span class="quote-amount" id="solarCost">₹2,70,000</span>
+            </div>
+            <div class="quote-form">
+              <input type="text" placeholder="Name" class="quote-input">
+              <input type="tel" placeholder="Mobile" class="quote-input">
+              <button class="btn btn-primary quote-btn">
+                <span>Get Quote</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>

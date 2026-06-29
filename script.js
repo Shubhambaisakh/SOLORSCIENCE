@@ -392,3 +392,109 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+
+/* ==========================================================================
+   ANIMATED COUNTER FOR HERO STATS
+   ========================================================================== */
+const animateCounters = () => {
+  const counters = document.querySelectorAll('.stat-number-hero[data-target]');
+  
+  counters.forEach(counter => {
+    const target = parseInt(counter.getAttribute('data-target'));
+    // Save the plus span if exists
+    const plusSpan = counter.querySelector('.stat-plus');
+    const plusHTML = plusSpan ? plusSpan.outerHTML : '';
+    
+    const steps = 60;
+    const duration = 2000;
+    let step = 0;
+
+    const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+
+    const update = () => {
+      step++;
+      const progress = easeOut(step / steps);
+      const current = Math.round(progress * target);
+      counter.innerHTML = current.toLocaleString() + plusHTML;
+
+      if (step < steps) {
+        requestAnimationFrame(update);
+      } else {
+        counter.innerHTML = target.toLocaleString() + plusHTML;
+      }
+    };
+
+    // Start from 0
+    counter.innerHTML = '0' + plusHTML;
+    requestAnimationFrame(update);
+  });
+};
+
+// Trigger on page load
+window.addEventListener('load', () => {
+  setTimeout(animateCounters, 500);
+});
+
+/* ==========================================================================
+   SOLAR CALCULATOR FUNCTIONALITY
+   ========================================================================== */
+const calculatorInit = () => {
+  const typeButtons = document.querySelectorAll('.type-btn');
+  const monthlyBillInput = document.getElementById('monthlyBill');
+  let currentType = 'home';
+  
+  // Type button click handler
+  typeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      typeButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentType = btn.dataset.type;
+      calculateSavings();
+    });
+  });
+  
+  // Monthly bill input handler
+  if (monthlyBillInput) {
+    monthlyBillInput.addEventListener('input', calculateSavings);
+    calculateSavings(); // Initial calculation
+  }
+  
+  function calculateSavings() {
+    const monthlyBill = parseFloat(monthlyBillInput.value) || 5000;
+    
+    // Calculate based on customer type
+    let systemSize, annualSavings, yearlyGen, roofNeeded, solarCost;
+    
+    // Simplified calculation logic
+    const unitsPerMonth = monthlyBill / 8; // Assuming ₹8 per unit
+    const unitsPerYear = unitsPerMonth * 12;
+    
+    // System size (1 kW generates ~1200 units/year approximately)
+    systemSize = Math.round(unitsPerYear / 1200);
+    
+    // Annual savings (assuming 90% of current bill)
+    annualSavings = monthlyBill * 12 * 0.9;
+    
+    // Yearly generation
+    yearlyGen = Math.round(systemSize * 1200);
+    
+    // Roof needed (1 kW needs ~80 sqft)
+    roofNeeded = Math.round(systemSize * 80);
+    
+    // Solar cost (₹45,000 per kW approximately)
+    solarCost = systemSize * 45000;
+    
+    // Update UI
+    document.getElementById('systemSize').textContent = `${systemSize} kW`;
+    document.getElementById('annualSavings').textContent = `₹${(annualSavings / 1000).toFixed(1)}k`;
+    document.getElementById('yearlyGen').textContent = `${yearlyGen} units`;
+    document.getElementById('roofNeeded').textContent = `${roofNeeded} sqft`;
+    document.getElementById('solarCost').textContent = `₹${(solarCost / 1000).toFixed(0)},000`;
+  }
+};
+
+// Initialize calculator
+if (document.querySelector('.calculator-section')) {
+  calculatorInit();
+}
